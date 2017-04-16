@@ -5,10 +5,10 @@ using System.Web;
 
 namespace MovieReviewClient
 {
-    public class UserInfo
+    public class user
     {
+        public int Id { get; set; }
         public string email { get; set; }
-        public string name { get; set; }
-        public string password { get; set; }
+        public string pwd { get; set; }
     }
 }
