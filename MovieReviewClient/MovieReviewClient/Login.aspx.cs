@@ -6,6 +6,7 @@ using System.Net.Http;
 using System.Net.Http.Headers;
 using System.Threading.Tasks;
 using System.Web;
+using System.Web.Script.Serialization;
 using System.Web.UI;
 using System.Web.UI.WebControls;
 
@@ -39,6 +40,8 @@ namespace MovieReviewClient
             else {
                 AdminLogin(email,password);
             }
+            //checking flag value
+            //if flag = 1 then login successfull 
 
 
         }
@@ -50,35 +53,40 @@ namespace MovieReviewClient
 
         private async void Userlogin(string text1, string text2)
         {
-
-            string url = "http://localhost:50115/Login?email="+text1+"&pwd="+text2;
-            var response = await client.GetAsync(url);
-           
-            if (response.IsSuccessStatusCode)
+            try
             {
-                // Label1.Text = "It worked!!!";
+                string url = "http://localhost:50115/Login?email=" + text1 + "&pwd=" + text2;
+                var response = await client.GetAsync(url);
 
-                string data =await response.Content.ReadAsStringAsync();
-                user u = new user();
-                //    u.email =
-                if (data == null)
+                if (response.IsSuccessStatusCode)
                 {
-                    Label1.Text = "Data is null!!!";
+                    string data = await response.Content.ReadAsStringAsync();
+                    var result = JsonConvert.DeserializeObject<user>(data);
+
+                    Session["email"] = result.email;
+                    if (Session["email"] == null)
+                    {
+                        Label1.Text = "Session was not created properly";
+                    }
+                    else
+                    {
+                        //Label1.Text = Session["email"].ToString();
+                        Response.Redirect("HomePage.aspx");
+                        Label1.Text = Session["email"].ToString();
+                    }
+                   
                 }
                 else
                 {
+                    Label1.Visible = true;
+                    Label1.Text = "Wrong Credentials!!!";
                     
-                    Response.Redirect("HomePage.aspx");
                 }
-                
-                
-
             }
-            else
+            catch (Exception e)
             {
+                Label1.Text = e.ToString();
                
-                Label1.Visible=true;
-                Label1.Text = "Wrong Credentials!!!";
             }
         }
     }

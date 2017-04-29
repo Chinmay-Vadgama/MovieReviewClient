@@ -37,6 +37,7 @@ namespace MovieReviewClient
             var response = await client.PostAsync("http://localhost:50115/UserSignUp", content);
             if (response.IsSuccessStatusCode)
             {
+              
                 Response.Redirect("Login.aspx");
             }
             else {

@@ -1,10 +1,10 @@
-﻿<%@ Page Async="true" Title="" Language="C#" MasterPageFile="~/Parent.Master" AutoEventWireup="true" CodeBehind="Login.aspx.cs" Inherits="MovieReviewClient.Login" %>
+﻿<%@ Page Async="true" Title="" enableSessionState="True" Language="C#" MasterPageFile="~/Parent.Master" AutoEventWireup="true" CodeBehind="Login.aspx.cs" Inherits="MovieReviewClient.Login" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
     <style type="text/css">
         .form 
         {
-            text-align:center;
-           
+            align-items:center;
+            text-align:center;          
             width: 75%;
             font-size: 30px;
             color: white;
@@ -16,14 +16,15 @@
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
     <form id="form1" runat="server">
        <div class="form" >
-           <br />
-           Select the Type:<asp:DropDownList ID="LoginType" runat="server" Width="361px" ForeColor="Black" class="form-control">
+           
+           <div class="User_login form-horizontal">
+               </br>
+                        <asp:DropDownList ID="LoginType" runat="server" Width="361px" ForeColor="Black" class="form-control">
                         <asp:ListItem Text="User"></asp:ListItem>
                         <asp:ListItem Text="Admin"></asp:ListItem>
                         
                     </asp:DropDownList>
-           <br />
-           <div class="User_login form-horizontal">
+           </br>
                     <div class="form-group row">
                         <div class="control-label col-sm-3">
                             <asp:Label ID="l1" runat="server" Text="Email" />
@@ -52,7 +53,7 @@
         </br>
   
            <br />
-           <asp:Label ID="Label1" runat="server" ></asp:Label>
+           <asp:Label ID="Label1" runat="server" ForeColor="White" ></asp:Label>
            <asp:Label ID="Label2" runat="server" ></asp:Label>
     
         </form>

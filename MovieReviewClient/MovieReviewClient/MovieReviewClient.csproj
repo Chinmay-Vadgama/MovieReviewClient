@@ -110,9 +110,21 @@
     <Reference Include="System.EnterpriseServices" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="AddMovie.aspx" />
     <Content Include="AM.aspx" />
+    <Content Include="DisplayMovies.aspx" />
     <Content Include="Global.asax" />
     <Content Include="HomePage.aspx" />
+    <Content Include="Images\battlefield1.jpg" />
+    <Content Include="Images\bs.jpg" />
+    <Content Include="Images\halo5.jpg" />
+    <Content Include="Images\hangover.jpg" />
+    <Content Include="Images\Interstellar.jpg" />
+    <Content Include="Images\MassEffect.jpg" />
+    <Content Include="Images\MortalKombatX.jpg" />
+    <Content Include="Images\ShadowOfWar.jpg" />
+    <Content Include="Images\Shawshank.jpg" />
+    <Content Include="Images\watchdogs2.jpg" />
     <Content Include="Images\WebSiteBackground.jpg" />
     <Content Include="Login.aspx" />
     <Content Include="MainPage.aspx" />
@@ -123,6 +135,8 @@
     </Content>
     <Content Include="Scripts\jquery-1.9.1.min.map" />
     <Content Include="Parent.Master" />
+    <Content Include="WebForm1.aspx" />
+    <Content Include="WebForm2.aspx" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
@@ -156,12 +170,26 @@
     </Content>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="AddMovie.aspx.cs">
+      <DependentUpon>AddMovie.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="AddMovie.aspx.designer.cs">
+      <DependentUpon>AddMovie.aspx</DependentUpon>
+    </Compile>
     <Compile Include="AM.aspx.cs">
       <DependentUpon>AM.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="AM.aspx.designer.cs">
       <DependentUpon>AM.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="DisplayMovies.aspx.cs">
+      <DependentUpon>DisplayMovies.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="DisplayMovies.aspx.designer.cs">
+      <DependentUpon>DisplayMovies.aspx</DependentUpon>
     </Compile>
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
@@ -202,6 +230,20 @@
     </Compile>
     <Compile Include="UserSignUp.aspx.designer.cs">
       <DependentUpon>UserSignUp.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="WebForm1.aspx.cs">
+      <DependentUpon>WebForm1.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="WebForm1.aspx.designer.cs">
+      <DependentUpon>WebForm1.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="WebForm2.aspx.cs">
+      <DependentUpon>WebForm2.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="WebForm2.aspx.designer.cs">
+      <DependentUpon>WebForm2.aspx</DependentUpon>
     </Compile>
   </ItemGroup>
   <ItemGroup>
